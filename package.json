@@ -1,0 +1,17 @@
+{
+  "name": "imageCrop",
+  "version": "1.0.0",
+  "description": "crop a image",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": ""
+  },
+  "repository": "https://github.com/weilluo/imageCrop",
+  "author": "wluo",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.4.1",
+    "express": "^4.13.4"
+  }
+}

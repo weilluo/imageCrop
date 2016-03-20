@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+
+  <title>evindor/evroneCrop @ GitHub</title>
+
+  <style type="text/css">
+    body {
+      margin-top: 1.0em;
+      background-color: #eee;
+      font-family: Helvetica, Arial, FreeSans, san-serif;
+      color: #333;
+      padding: 20px 10px;
+    }
+    .images {
+      text-align: left;
+    }
+    #demo1 {
+      width: 590px;
+      margin-right: 30px;
+    }
+    #preview1 {
+      /*width: 150px;
+      height: 150px;*/
+      vertical-align: top;
+      -webkit-box-shadow: #666 0px 2px 3px;
+      -moz-box-shadow: #666 0px 2px 3px;
+      box-shadow: #666 0px 2px 3px;
+    }
+    #demo2 {
+      width: 790px;
+    }
+  </style>
+
+  <script type="text/javascript" charset="utf-8" src="/assets/jquery.js"></script>
+  <!--[if IE]><script type="text/javascript" src="/assets/excanvas.js"></script><![endif]-->
+  <script type="text/javascript" charset="utf-8" src="/assets/evroneCrop.js"></script>
+</head>
+
+<body>
+  <div class="description">
+    JS crop tool based on canvas
+  </div>
+
+  <p>
+  This is a JavaScript crop plugin, based on canvas and written with CoffeeScript. Crop is done completely on client side, the result of crop is a base64 string, that you could easily send to server.
+  </p>
+  <br/>
+
+  <h2>Demo</h2>
+
+  <p>Usage without any settings but preview</p>
+  <div class="images">
+    <img src="/assets/img1.jpg" alt="Image" id="demo1"/>
+    <img id="preview1"/>
+  </div>
+
+  <p>Fixed square ratio with default selection in center</p>
+  <div class="images">
+    <img src="/assets/img1.jpg" alt="Image" id="demo2" />
+  </div>
+
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+      $('#demo1').load(function() {
+        $('#demo1').evroneCrop({
+          preview: '#preview1',
+          log: true
+          // size: {w: 150, h: 150}
+        });
+      });
+      $('#demo2').load(function() {
+        $('#demo2').evroneCrop({
+          setSelect: 'center',
+          ratio: 1
+        });
+      });
+    });
+  </script>
+</body>
+</html>
